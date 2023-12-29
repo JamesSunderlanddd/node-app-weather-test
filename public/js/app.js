@@ -1,9 +1,11 @@
 const weatherForm = document.querySelector('form')
 
+const port = process.env.PORT || 3000
+
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const inputDataEl = document.querySelector('#input1');
-  const url = `http://localhost:3000/weather?address=${inputDataEl.value}`
+  const url = `/weather?address=${inputDataEl.value}`
   getData(url)
 })
 
