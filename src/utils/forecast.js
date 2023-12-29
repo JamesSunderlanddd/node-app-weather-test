@@ -9,8 +9,9 @@ const forecast = ({ latitude, longitude, callback }) => {
       callback('Unable to find location. Try another one.')
     } else {
       const weatherDescription = response.body.current.weather_descriptions[0];
-      const { temperature, feelslike: feelsLike } = response.body.current;
-      return callback(undefined,`${weatherDescription}. It is currently ${temperature} degrees out. It feels like ${feelsLike} degrees out`)
+      const { localtime } = response.body.location;
+      const { temperature, feelslike: feelsLike, wind_speed } = response.body.current;
+      return callback(undefined,`${weatherDescription}. It is currently ${temperature} degrees out. It feels like ${feelsLike} degrees out. The date and local time is is ${localtime}.`)
     }
   })
 

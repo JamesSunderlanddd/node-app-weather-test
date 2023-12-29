@@ -1,7 +1,5 @@
 const weatherForm = document.querySelector('form')
 
-const port = process.env.PORT || 3000
-
 weatherForm.addEventListener('submit', (e) => {
   e.preventDefault()
   const inputDataEl = document.querySelector('#input1');
